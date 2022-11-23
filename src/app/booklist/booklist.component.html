@@ -1,0 +1,30 @@
+<div>
+  <h2>BOOKS</h2>
+  <p>We have {{ books.length }} book(s)!</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>
+          <input [(ngModel)]="titleFilter" placeholder="title" />
+        </th>
+        <th>
+          <input [(ngModel)]="authorFilter" placeholder="author" />
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let book of books">
+        <tr *ngIf="canShow(book)">
+          <td>
+            {{ book.id }}
+          </td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.price }} euros</td>
+          <td>{{ book.published }}</td>
+          <td></td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

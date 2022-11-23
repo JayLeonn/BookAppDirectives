@@ -1,0 +1,9 @@
+<form>
+  <div><input value="{{ data1 }}" /></div>
+  <div><input [value]="data2" /></div>
+  <div><input [attr.value]="data3" /></div>
+
+  <div>{{ data1 }}, {{ data2 }}, {{ data3 }}</div>
+  <input type="button" (click)="change()" value="Change" />
+  <input type="reset" value="Reset" />
+</form>
